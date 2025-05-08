@@ -1,0 +1,6 @@
+@HelloDotnet_HostAddress = http://localhost:5273
+
+GET {{HelloDotnet_HostAddress}}/hello
+Accept: application/json
+
+###
