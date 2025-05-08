@@ -1,14 +1,7 @@
-var builder = WebApplication.CreateBuilder(args);
+var app = WebApplication.CreateBuilder(args).Build();
 
-builder.Services.AddOpenApi();
-
-var app = builder.Build();
-
-app.MapOpenApi();
 app.UseHttpsRedirection();
 
-app.MapGet("/hello", () => "Hello, .NET!")
-   .WithName("GetHello")
-   .Produces<string>();
+app.MapGet("/hello", () => "Hello, .NET!");
 
 await app.RunAsync();
