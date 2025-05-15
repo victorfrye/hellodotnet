@@ -9,10 +9,10 @@ public class HelloApiTests(WebApplicationFactory<Program> factory) : IClassFixtu
     {
         var client = factory.CreateClient();
 
-        var response = await client.GetAsync("/hello");
+        var response = await client.GetAsync("/hello", TestContext.Current.CancellationToken);
         response.EnsureSuccessStatusCode();
 
-        var content = await response.Content.ReadAsStringAsync();
+        var content = await response.Content.ReadAsStringAsync(TestContext.Current.CancellationToken);
         Assert.Equal("Hello, .NET!", content);
     }
 }
