@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "editorconfig.editorconfig",
+    "GitHub.copilot",
+    "GitHub.copilot-chat",
+    "ms-azuretools.vscode-containers",
+    "ms-dotnettools.csdevkit",
+    "ms-vscode.powershell",
+  ]
+}
