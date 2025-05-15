@@ -1,0 +1,28 @@
+{
+  "name": "Hello .NET",
+  "image": "mcr.microsoft.com/devcontainers/dotnet:10.0-preview-noble",
+  // "image": "mcr.microsoft.com/devcontainers/dotnet:10.0-preview-trixie", // Docker-in-Docker does not support Trixie yet
+  // https://containers.dev/features
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/devcontainers/features/powershell:1": {}
+  },
+
+  "postCreateCommand": "bash ${containerWorkspaceFolder}/.devcontainer/scripts/install.sh",
+  "postStartCommand": "dotnet dev-certs https --trust",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "editorconfig.editorconfig",
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "ms-dotnettools.csdevkit"
+      ],
+      "settings": {
+        "editor.formatOnSave": true
+      }
+    }
+  },
+
+  "remoteUser": "root"
+}
